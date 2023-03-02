@@ -26,3 +26,19 @@ graph_title = st.text_input(
 )
 plt.title(graph_title)
 st.pyplot(fig)
+
+st.header("Trcé lineaire")
+random_data = np.random.normal(size=1000)
+st.line_chart(random_data)
+
+st.header("Diagramme en barre")
+bar_data = pd.DataFrame(
+    [100, 19, 88, 54],
+    ["A", "B", "C", "D"]
+)
+st.bar_chart(bar_data)
+
+st.header("Une carte")
+df = pd.read_csv("cities.csv").head(100)
+st.write(df.head(10))
+st.map(df[['latitude', 'longitude']])
